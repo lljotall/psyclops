@@ -1,0 +1,2 @@
+rootProject.name='Psyclops'
+include ':app'

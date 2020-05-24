@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Psyclops</string>
+    <string name="intro_message">
+        <![CDATA[
+            This app was built on top of the sample that demonstrates the basic use of CameraX API.\n
+            It generates sounds based on the color of the central pixel captured by the camera.\n
+            Clicks with at a higher frequency mean brighter colors, while spaced clicks mean darker colors.
+            High pitch means colors closer to blue, while low pitch clicks correspond to red-ish tones.\n
+            Psyclops is still in its infancy and will be refined in later versions.\n\n
+            The Training Mode allows you to validate your skills in aiming at an object and recall its color by the sound produced.
+            The Wake Lock blocks the phone from Locking, so you can run the app for longer periods of time.
+        ]]>
+    </string>
+    <string name="training">Training mode</string>
+    <string name="wakeMode">Wake Lock</string>
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+</resources>
