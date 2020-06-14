@@ -70,15 +70,21 @@ At each shot taken from the camera, the color of the central pixel is converted 
 
 Sound consists of mechanical waves that travel through a medium, such as air. In humans, these waves vibrate our eardrum and get propagated until they reach the hair cells inside the cochlea in our inner ear [[11](https://www.nature.com/articles/ncomms1533)]. The position of a stimulated cell will make it respond to a specific sound frequency, which will cause an auditory experience of a specific pitch.
 
-As the original Eyeborg, developed by Adam Montandon & Neil Harbisson [[12](https://en.wikipedia.org/wiki/Sonochromatism)], Psyclops associates a determined hue to a specific pitch. This technique is called "frequency modulation", where we encode information in the frequency of a wave [[13](https://www.ni.com/fr-fr/innovations/white-papers/06/frequency-modulation--fm-.html)]. The advantage of this technique is that the wave frequency does not decay as the wave travels, in contrast to amplitude modulated waves. In this case, the information is encoded in the wave amplitude - or the volume of the sound in the scope of this project. Here, a *Hue* value of 0 corresponds to 900 Hz, and a *Hue* value of 359, to 3.6k, as illustrated by Fig 2a.
+As the original Eyeborg, developed by Adam Montandon & Neil Harbisson [[12](https://en.wikipedia.org/wiki/Sonochromatism)], Psyclops associates a determined hue to a specific pitch. This technique is called "frequency modulation", where we encode information in the frequency of a wave [[13](https://www.ni.com/fr-fr/innovations/white-papers/06/frequency-modulation--fm-.html)]. The advantage of this technique is that the wave frequency does not decay as the wave travels, in contrast to amplitude modulated waves. In this case, the information is encoded in the wave amplitude - or the volume of the sound in the scope of this project. Here, a *Hue* value of 0 corresponds to 900 Hz, and a *Hue* value of 359, to 6.3k, as illustrated by Fig 2a.
 
-**Fig 2** (a) *Hue* convertion into a sinusoidal frequency. (b) Sawtooth wave () with polynomial decay (). (c) Psyclops generated sound waveform.
+![](doc/fig2.png)
 
-Additionally, this project encodes *Brightness* information in the same wave. This is done by enveloping our sinusoidal wave inside another wave. This one is a sawtooth with a polynomial decay, producing the auditory experience of a "click" (see Fig 2b). When we multiply both waves, we get the result in Figure 2c. Therefore, Psyclops modulates two parameters on the generated sound: the frequency of the sine wave and the frequency of the polynomial sawtooth wave. The first one is perceived as the pitch of the sound in itself, while the polynomial sawtooth is perceived as more or less spaced clicks. The more frequent the clicks, the brighter the color.
+**Fig 2** (a) *Hue* convertion into the frequency of a sinusoidal wave. (b) Sawtooth wave (dashed line) with polynomial decay (solid line). (c) *Brightness* convertion into the frequency of a sawtooth wave with polynomial decay. (d) Psyclops generated sound waveform.
+
+Additionally, this project encodes *Brightness* information in the same wave. This is done by enveloping our sinusoidal wave inside another wave. This one is a sawtooth with a polynomial decay, producing the auditory experience of a "click" (see Fig 2b). A *Brightness* of 0.0 is represented by a wave with 10 clicks per second, while a *Brightness* of 1.0 is converted into a wave with 30 clicks per second (Fig 2c).  When we multiply both waves, we get the result in Figure 2d. Therefore, Psyclops modulates two parameters on the generated sound: the frequency of the sine wave and the frequency of the polynomial sawtooth wave. The first one is perceived as the pitch of the sound in itself, while the polynomial sawtooth is perceived as more or less spaced clicks. The more frequent the clicks, the brighter the color.
 
 ### Yet another sonochromatic scale
 
-So far, two sonochromatic scales have been developed [[12](https://en.wikipedia.org/wiki/Sonochromatism),[14](http://augmentedorganism.com/augmented-organism-sonochromatic-audio-visual-design)]. Here, I propose another one [[15](https://xkcd.com/927/)], which will be updated in future work. Indeed, each sonochromat should keep in mind they are free to experiment and customize their own senses according to their own internal references, and are encouraged to play with distinct waveforms and color encodings. A good place to start exploring how we perceive distinct waveforms is the Chrome Music Lab Oscillators [[16](https://musiclab.chromeexperiments.com/Oscillators/)] to hear how sines, square and sawtooth waves sound different.
+![](https://imgs.xkcd.com/comics/standards.png)
+
+**Fig 3** xkcd comic [[14](https://xkcd.com/927/)].
+
+So far, two sonochromatic scales have been developed [[12](https://en.wikipedia.org/wiki/Sonochromatism),[15](http://augmentedorganism.com/augmented-organism-sonochromatic-audio-visual-design)]. Here, I propose another one [[14](https://xkcd.com/927/)], which will be updated in future work. Indeed, each sonochromat should keep in mind they are free to experiment and customize their own senses according to their own internal references, and are encouraged to play with distinct waveforms and color encodings. A good place to start exploring how we perceive distinct waveforms is the Chrome Music Lab Oscillators [[16](https://musiclab.chromeexperiments.com/Oscillators/)] to hear how sines, square and sawtooth waves sound different.
 
 In his TED talk presentation given in 2009, Beau Lotto introduces yet another way of translating a grayscale image into sound, integrating the information of several pixels into the generated waveform [[17](https://www.youtube.com/watch?v=mf5otGNbkuc)]. This interesting example shows the potential of integrating information about the context in the image. It's worth noting that vision processing takes a considerable amount of brain energy and that humans are gifted with an amazing neural network that processes and identifies objects in a relatively high resolution at several frames per second [[18](https://www.dovepress.com/energy-metabolism-of-the-visual-system-peer-reviewed-article-EB)]. This suggests that our auditory cortex might not be developed enough in order to use sound as a way to replace vision itself. However, there's plenty of room at the bottom yet to be explored before this limitation becomes significant. 
 
@@ -102,7 +108,7 @@ I also would like to explore **more complex sonochromat scales**, by integrating
 
 So far, the **sonochromat scales** are very basic on their mathematical description and **can be greatly expanded**. The world of electronic music has several effects that can be parametrized and convey information to a listener, opening the possibilities for a myriad of ways to represent colors. Another source inspiration is the movement of Oscilloscope Music [[23](https://www.youtube.com/watch?v=4gibcRfp4zA), [24](https://www.youtube.com/watch?v=5WBWIKnr0Os), [25](https://www.youtube.com/watch?v=J2YQD8Go_Hc)], which also provides a bridge between visual and auditory experience under waveforms generated by computers.
 
-An interesting question is about **how the produced sounds can be entertaining**. Art is a product of patterns carefully arranged to make a harmonious piece. Psyclops, however, is designed to be a tool of sensing the world around us. Not all sounds are music, and not all images are art. Nonetheless, a connexion between audio and video can be explored by artists, as already performed by Neil Harbinsson himself [[26](https://www.saatchiart.com/neilharbisson),[27](http://www.artwiki.fr/wakka.php?wiki=NeilHarbisson)].
+An interesting question is about **how the produced sounds can be entertaining**. Art is a product of patterns carefully arranged to make a harmonious piece. Psyclops, however, is designed to be a tool of sensing the world around us. At first, it looks challenging to develop a sonochromat scale that will produce pleasant melodies for an arbitrary set of landscapes. In his song *Final Boss* [[26](https://www.youtube.com/watch?v=VGh5DV0D3wk)], Nitro Fun spells an encoded message in binary using high and low pitch beeps. The insight is genious and the message plays really well in its context, however I believe a song played entirely in binary would need some tweaking in order to sound artistically interesting. After all, a handshake betwen science and art implies a respect that needs to come from both sides [[27](https://www.youtube.com/watch?v=G94yp-a8XG8)]. Therefore, I am eager to receiver suggestions that may improve user experience in an artistic sense as well. As a final note, a connexion between audio and video can be and have been explored by artists, as already performed by Neil Harbinsson himself [[28](https://www.saatchiart.com/neilharbisson),[29](http://www.artwiki.fr/wakka.php?wiki=NeilHarbisson)].
 
 ## References
 
@@ -132,9 +138,9 @@ An interesting question is about **how the produced sounds can be entertaining**
 
 [13] https://www.ni.com/fr-fr/innovations/white-papers/06/frequency-modulation--fm-.html
 
-[14] http://augmentedorganism.com/augmented-organism-sonochromatic-audio-visual-design
+[14] https://xkcd.com/927/
 
-[15] https://xkcd.com/927/
+[15] http://augmentedorganism.com/augmented-organism-sonochromatic-audio-visual-design
 
 [16] https://musiclab.chromeexperiments.com/Oscillators/
 
@@ -156,6 +162,10 @@ An interesting question is about **how the produced sounds can be entertaining**
 
 [25] https://www.youtube.com/watch?v=J2YQD8Go_Hc
 
-[26] https://www.saatchiart.com/neilharbisson
+[26] https://www.youtube.com/watch?v=VGh5DV0D3wk
 
-[27] http://www.artwiki.fr/wakka.php?wiki=NeilHarbisson
+[27] https://www.youtube.com/watch?v=G94yp-a8XG8
+
+[28] https://www.saatchiart.com/neilharbisson
+
+[29] http://www.artwiki.fr/wakka.php?wiki=NeilHarbisson
